@@ -9,6 +9,7 @@ jobs:
       VPS_NAME: auto-restart-vps
     steps:
       - checkout
+      - run: rm -f .python-version   # Xóa file gây lỗi
       - run:
           name: Install gdown
           command: pip install gdown
