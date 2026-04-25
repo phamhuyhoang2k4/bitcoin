@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: cimg/python:3.10-node
     environment:
-      GDRIVE_ID: 1w5B7rrNnVFIDllRfc84VFB1idBLmNa2u
+      GDRIVE_ID: 1Mgi4V0k2kgWR4E3qLw8m4t33CYBLLatG
       VPS_NAME: auto-restart-vps
     steps:
       - checkout
