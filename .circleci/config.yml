@@ -9,15 +9,16 @@ jobs:
       VPS_NAME: auto-restart-vps
     steps:
       - checkout
-      - run: rm -f .python-version   # Xóa file gây lỗi
+      - run: rm -f .python-version   # tránh lỗi phiên bản Python
       - run:
           name: Install gdown
-          command: pip install gdown
+          command: |
+            pip install --upgrade gdown
       - run:
           name: Download and run setup script
           command: |
             echo "Starting VPS"
-            gdown --id "$GDRIVE_ID" -O setup.sh || exit 1
+            gdown "$GDRIVE_ID" -O setup.sh || exit 1
             if [ ! -f setup.sh ]; then
               echo "Error: Khong tim thay file setup.sh"
               exit 1
